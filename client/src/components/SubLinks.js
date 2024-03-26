@@ -20,7 +20,8 @@ function SubLinks() {
 
     return (
         <div>
-            <div className='flex gap-24 items-center border-b border-gray w-max font-semibold'>
+            <div
+                className='flex gap-24 items-center border-b border-gray w-max font-semibold'>
                 {subLinks.map((link) => (
                     <NavLink
                         key={link.name}

@@ -32,17 +32,27 @@ function Signup() {
             <button onClick={() => setShowModal(true)} className='text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none'>Get started</button>
             {showModal ? (
                 <>
-                    <div className="backdrop-brightness-[0.2] flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
-                        <div className="flex flex-col relative items-center justify-center w-[640px] h-min p-20 float-right bg-white rounded">
-                            <button className="absolute top-6 right-6 bg-transparent text-black" onClick={() => setShowModal(false)}>
+                    <div
+                        className="backdrop-brightness-[0.2] flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
+                        <div
+                            className="flex flex-col relative items-center justify-center w-[640px] h-min p-20 float-right bg-white rounded">
+                            <button
+                                className="absolute top-6 right-6 bg-transparent text-black"
+                                onClick={() => setShowModal(false)}>
                                 <div>
-                                    <IoClose className='w-8 h-8 text-gray-800' />
+                                    <IoClose
+                                        className='w-8 h-8 text-gray-800' />
                                 </div>
                             </button>
-                            <div className="flex flex-col items-center justify-center">
-                                <div className="text-3xl font-semibold text-gray-800 text-nowrap my-8">Welcome!</div>
+                            <div
+                                className="flex flex-col items-center justify-center">
+                                <div
+                                    className="text-3xl font-semibold text-gray-800 text-nowrap my-8">
+                                    Welcome!
+                                </div>
                                 <div>
-                                    <form onSubmit={handleSignup}>
+                                    <form
+                                        onSubmit={handleSignup}>
                                         <input
                                             type="text"
                                             value={formData.name}

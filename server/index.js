@@ -7,6 +7,8 @@ import { login, signup } from './controllers/auth.js';
 import userRoutes from './routes/users.js';
 import blogRoutes from './routes/blogs.js';
 import commentRoutes from './routes/comments.js';
+import { verifyToken } from './middlewares/auth.js';
+import { getFeed } from './controllers/blog.js';
 
 dotenv.config()
 
@@ -21,9 +23,10 @@ app.get('/', (req, res) => {
 })
 app.post('/signup', signup);
 app.post('/login', login);
-app.use('/user', userRoutes)
-app.use('/blog', blogRoutes)
-app.use('/comment', commentRoutes)
+app.get('/feed', verifyToken, getFeed);
+app.use('/user', userRoutes);
+app.use('/blog', blogRoutes);
+app.use('/comment', commentRoutes);
 
 const PORT = process.env.PORT || 6001
 mongoose.connect(process.env.MONGO_URL, {

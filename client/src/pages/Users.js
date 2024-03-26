@@ -12,7 +12,7 @@ function Users() {
         ; (async () => {
             try {
                 const response = await axios.get('/user/all');
-                if (response.status == 200) {
+                if (response.status === 200) {
                     setUsers(response.data)
                 } else {
                     setUsers([])
@@ -24,12 +24,16 @@ function Users() {
     }, [])
 
     return (
-        <div className='w-2/5 mx-auto my-8 *:my-6'>
-            {users.length > 0 ?
-                users.filter((item) => { return isLoggedIn ? item._id !== user._id : item }).map((user) => { return <UserCard key={user._id} user={user} /> })
-                : <div>Error fetching users</div>
-            }
-        </div>
+        <>
+            <div className='w-2/5 mx-auto p-4 text-2xl font-semibold'>Explore authors</div>
+            <div
+                className='w-2/5 mx-auto my-8 *:my-6'>
+                {users.length > 0 ?
+                    users.filter((item) => { return isLoggedIn ? item._id !== user._id : item }).map((user) => { return <UserCard key={user._id} user={user} /> })
+                    : <div>Error fetching users</div>
+                }
+            </div>
+        </>
     )
 }
 

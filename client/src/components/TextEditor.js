@@ -21,9 +21,13 @@ export default function TextEditor() {
     };
 
     return (
-        <div className="editorJs relative">
-            <div className="p-4 float-right">
-                <PostBlogBtn data={data} />
+        <div
+            className="editorJs relative">
+            <div
+                className="p-4 float-right">
+                <PostBlogBtn
+                    data={data}
+                />
             </div>
             <div>
                 <input

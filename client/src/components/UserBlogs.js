@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import BlogCard from './BlogCard';
 import axios from '../axios';
 
-function BlogList() {
+function UserBlogs() {
 
     const [blogs, setBlogs] = useState([]);
     const [error, setError] = useState(null)
@@ -35,4 +35,4 @@ function BlogList() {
     )
 }
 
-export default BlogList
+export default UserBlogs

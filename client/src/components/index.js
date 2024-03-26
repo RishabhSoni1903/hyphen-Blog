@@ -11,7 +11,7 @@ import BlogCard from "./BlogCard";
 import CommentCard from "./CommentCard";
 import LoginForm from "./LoginForm";
 import LogoutBtn from "./LogoutBtn";
-import BlogList from "./BlogList";
+import UserBlogs from "./UserBlogs";
 import Followers from "./Followers";
 import Following from "./Following";
 import WriteBlogBtn from "./WriteBlogBtn";
@@ -20,6 +20,6 @@ import PostBlogBtn from "./PostBlogBtn";
 export {
     TextEditor, Navbar, HeroSection, BlogTile, ProfileComponent,
     SubLinks, UserCard, FollowBtn, BlogCard, CommentCard,
-    LoginForm, LogoutBtn, BlogList, Followers, Following,
+    LoginForm, LogoutBtn, UserBlogs, Followers, Following,
     UnfollowBtn, WriteBlogBtn, PostBlogBtn
 };

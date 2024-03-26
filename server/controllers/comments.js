@@ -17,7 +17,8 @@ export const addComment = async (req, res) => {
                 blogId
             })
             const savedComment = await newComment.save();
-            res.status(200).json(savedComment);
+            const comment = await Comment.findById(savedComment._id).populate('user', '_id name profilePhoto').exec()
+            res.status(200).json(comment);
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -45,7 +46,7 @@ export const deleteComment = async (req, res) => {
 export const getCommentsOnPost = async (req, res) => {
     try {
         const blogId = req.params.id;
-        const comments = await Comment.find({ blogId: blogId }).populate('user', '_id name profilePhoto').exec()
+        const comments = await Comment.find({ blogId: blogId }).sort([['date', -1]]).populate('user', '_id name profilePhoto').exec();
         res.status(200).json(comments);
     } catch (error) {
         res.status(500).json({ error: error.message })

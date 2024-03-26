@@ -60,19 +60,40 @@ function UserCard({ user }) {
     }
 
     return (
-        <div className='flex gap-4 w-full p-4 shadow rounded'>
-            <div onClick={handleClick} className='min-w-24 w-24 min-h-24 h-24 rounded-full overflow-hidden cursor-pointer'><img className='h-full object-cover object-center' src={manImg} alt='Profile' /></div>
-            <div className='flex-grow'>
-                <div onClick={handleClick} className='text-2xl capitalize cursor-pointer'>{user.name}</div>
-                <div>{user.bio}</div>
-                <div className='flex mt-2 gap-6'>
-                    <div>Blogs: <span className='font-semibold'>{user.blogs.length}</span></div>
-                    <div>Followers: <span className='font-semibold'>{user.followers.length}</span></div>
-                    <div>Following: <span className='font-semibold'>{user.following.length}</span></div>
+        <div
+            className='flex gap-4 w-full p-4 shadow rounded'>
+            <div
+                onClick={handleClick}
+                className='min-w-24 w-24 min-h-24 h-24 rounded-full overflow-hidden cursor-pointer'><img className='h-full object-cover object-center' src={manImg} alt='Profile' /></div>
+            <div
+                className='flex-grow'>
+                <div
+                    onClick={handleClick} className='text-2xl capitalize cursor-pointer'>
+                    {user.name}
+                </div>
+                <div>
+                    {user.bio}
+                </div>
+                <div
+                    className='flex mt-2 gap-6'>
+                    <div>
+                        Blogs:&nbsp;
+                        <span className='font-semibold'>{user.blogs.length}</span></div>
+                    <div>
+                        Followers:&nbsp;
+                        <span className='font-semibold'>{user.followers.length}</span></div>
+                    <div>
+                        Following:&nbsp;
+                        <span className='font-semibold'>{user.following.length}</span></div>
                 </div>
             </div>
             <div>
-                {isFollowing ? <UnfollowBtn onClick={handleUnfollow} /> : <FollowBtn onClick={handleFollow} />}
+                {isFollowing ?
+                    <UnfollowBtn
+                        onClick={handleUnfollow} />
+                    :
+                    <FollowBtn
+                        onClick={handleFollow} />}
             </div>
         </div>
     )
